@@ -115,7 +115,8 @@ def pkt(packet_raw,target,options=""):
         f'Sec-CH-UA-Platform: "{parsed_ua.os.family}"',
         f'Sec-CH-UA-Platform-Version: "{os_version}"',
     ]
-   pkt_r = f"{packet_raw[1]} {packet_raw[0]}?time={time.time()} HTTP/1.1\r\nHost: {target['host']}\r\nReferer: {target['normal']}\r\nUpgrade-Insecure-Requests: 1\r\nDnt: 1\r\nPriority: u=0, i\r\nUser-Agent: {user_agent}\r\n{'\r\n'.join(client_hints)}\r\nAccept: */*\r\nAccept-Language: *\r\nAccept-Encoding: *\r\nTe: trailers\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: same-origin\r\nSec-Fetch-User: ?1{raw}\r\n"
+   hint = '\r\n'.join(client_hints)
+   pkt_r = f"{packet_raw[1]} {packet_raw[0]}?time={time.time()} HTTP/1.1\r\nHost: {target['host']}\r\nReferer: {target['normal']}\r\nUpgrade-Insecure-Requests: 1\r\nDnt: 1\r\nPriority: u=0, i\r\nUser-Agent: {user_agent}\r\n{hint}\r\nAccept: */*\r\nAccept-Language: *\r\nAccept-Encoding: *\r\nTe: trailers\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: same-origin\r\nSec-Fetch-User: ?1{raw}\r\n"
    pkt_r = pkt_r.replace('\r\n\r\n','\r\n')
    return pkt_r
 
